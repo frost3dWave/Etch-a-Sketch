@@ -26,6 +26,8 @@
     width: 37.5rem;
     height: 37.5rem;
     border: 1px solid black;
+    display: flex;
+    flex-wrap: wrap;
 }
 
 .settings{
@@ -103,4 +105,9 @@ button {
     border-radius: 50%;
     background: black;
     cursor: pointer;
+}
+
+.squareGrids {
+    display: inline-block;
+    border: 1px solid darkred;
 }
