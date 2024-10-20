@@ -64,6 +64,11 @@ button {
     font-size: 1.5rem;
 }
 
+.active {
+    background-color: #09090b;
+    color: #fafafa;
+}
+
 .slider_container{
     border: 1px solid rebeccapurple;
     width: 100%;
