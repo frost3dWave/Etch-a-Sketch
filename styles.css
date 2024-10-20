@@ -1,3 +1,13 @@
+:root{
+    --clr-bg: #e4e4e7;
+    --clr-container: #fefefe;
+    --clr-shadow: rgb(9, 9, 11, 0.2);
+    --clr-title: #333;
+    --clr-text: #111827;
+    --btn-border: #0a0a0a;
+    --clr-active_bg: #27272a;
+}
+
 *,
 *::before,
 *::after{
@@ -5,33 +15,43 @@
     margin: 0;
 }
 
+body {
+    max-width: 90%;
+    margin-inline: auto;
+    background-color: var(--clr-bg);
+    color: var(--clr-text);
+}
+
 .title{
     font-size: 5rem;
-    margin-bottom: 3rem;
+    letter-spacing: -0.1rem;
+    margin-top: 1rem;
+    margin-bottom: 2.5rem;
     text-align: center;
+    color: var(--clr-title);
 }
 
 .content_container{
-    max-width: 90%;
-    border: 1px solid saddlebrown;
+    /* border: 1px solid saddlebrown; */
     display: flex;
     justify-content: center;
     align-items: center;
     gap: 10rem;
     padding: 1.5rem;
-    margin-inline: auto;
 }
 
 .grid_container{
     width: 37.5rem;
     height: 37.5rem;
-    border: 1px solid black;
+    background-color: var(--clr-container);
+    box-shadow: 3px 3px 5px var(--clr-shadow), -3px -3px 5px var(--clr-shadow);
+    /* border: 1px solid black; */
     display: flex;
     flex-wrap: wrap;
 }
 
 .settings{
-    border: 1px solid red;
+    /* border: 1px solid red; */
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -43,8 +63,8 @@
     -webkit-appearance: none;
     -moz-appearance: none;
     appearance: none;
-    width: 7.5rem;
-    height: 7.5rem;
+    width: 6.5rem;
+    height: 6.5rem;
     background-color: transparent;
     border: none;
     cursor: pointer;
@@ -60,17 +80,22 @@
 
 button {
     width: 13rem;
-    height: 2.5rem;
+    height: 3rem;
+    border: 1px solid var(--btn-border);
+    background-color: var(--clr-container);
+    color: var(--clr-text);
+    border-radius: 0.4rem;
+    box-shadow: 2px 2px 5px var(--clr-shadow);
     font-size: 1.5rem;
 }
 
 .active {
-    background-color: #09090b;
-    color: #fafafa;
+    background-color: var(--clr-active_bg);
+    color: var(--clr-container);
 }
 
 .slider_container{
-    border: 1px solid rebeccapurple;
+    /* border: 1px solid rebeccapurple; */
     width: 100%;
     display: flex;
     flex-direction: column;
@@ -81,6 +106,7 @@ button {
 
 .slider_value{
     font-size: 1.8rem;
+    color: var(--clr-active_bg);
 }
 
 .slider{
@@ -89,7 +115,7 @@ button {
     width: 100%;
     height: 15px;
     border-radius: 5px;
-    background: #d3d3d3;
+    background: rgba(113, 113, 122, 0.4);
     outline: none;
     opacity: 0.7;
 }
@@ -114,5 +140,5 @@ button {
 
 .squareGrids {
     display: inline-block;
-    border: 1px solid darkred;
+    /* border: 1px solid darkred; */
 }
