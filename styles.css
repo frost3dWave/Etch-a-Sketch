@@ -89,6 +89,12 @@ button {
     font-size: 1.5rem;
 }
 
+button:hover,
+input[type="color"]:hover {
+    transform: scale(1.05);
+    transition: transform 0.2s ease-in-out;
+}
+
 .active {
     background-color: var(--clr-active_bg);
     color: var(--clr-container);
