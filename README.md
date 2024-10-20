@@ -2,7 +2,7 @@
 
 ## About
 NOTE :- please view it on desktop, as its not responsive & was created for desktop.
-A JavScript project created as part of The Odin Project. 
+A JavaScript project created as part of The Odin Project. 
 the grid is dynamically created based on the size selected. 
 choose the different modes to sketch over the grid while clicking with & moving mouse over the grid.
 Rainbow mode randomizes the colors each time you pass over the grid. 
