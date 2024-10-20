@@ -1,5 +1,6 @@
 const gridContainer = document.querySelector(".grid_container");
 const colorPallete = document.querySelector(".color_wheel");
+const buttons = document.querySelectorAll("button");
 const sliderValue = document.querySelector(".slider_value");
 const slider = document.querySelector(".slider");
 
@@ -37,8 +38,45 @@ function createGrid(gridSize){
 }
 
 function paint(e){
-    currentColor = colorPallete.value;
     if (isDrawing){
-        e.target.style.backgroundColor = `${currentColor}`;
+        if (document.querySelector(".active").textContent==="Rainbow mode"){ // check to see if rainbow mode is currently active
+            let red = Math.floor(Math.random() * 255);
+            let green = Math.floor(Math.random() * 255);
+            let blue = Math.floor(Math.random() * 255);
+            e.target.style.backgroundColor = `rgb(${red},${green},${blue})`;
+        }else if (document.querySelector(".active").textContent==="Color mode"){ // check to see if color mode is currently active
+            currentColor = colorPallete.value;
+            e.target.style.backgroundColor = currentColor;
+        }else if(document.querySelector(".active").textContent==="Eraser"){ // check to see if eraser mode is currently active
+            e.target.style.backgroundColor = `#fefefe`;
+        }
     }
+}
+
+// making color mode active on default
+buttons.forEach(button => {
+    if (button.textContent === "Color mode"){
+        button.classList.add("active");
+    }
+});
+
+// to change active mode upon clicking between color & rainbow & eraser buttons
+buttons.forEach(button => {
+    if (button.textContent !== `Clear`) {
+        button.addEventListener("click", () => {
+            buttons.forEach(button => {button.classList.remove("active")});
+            button.classList.add("active");
+        });
+    }else{
+        button.addEventListener("click", clearGrid);
+    }
+});
+
+// for clearing the grid 
+function clearGrid(){
+    const squareGrids = document.querySelectorAll(".squareGrids");
+    squareGrids.forEach(cell => {
+        cell.style.backgroundColor = "white";
+    })
+
 }
